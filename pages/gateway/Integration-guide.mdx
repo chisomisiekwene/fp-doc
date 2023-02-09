@@ -1,0 +1,35 @@
+# Integration Guide
+
+#### [Quick Start](home#quickstart)
+
+## Webhook
+
+The payment integration you choose must include webhooks. An endpoint on your server where you can get notifications about these occurrences is called a webhook URL. 
+When a situation occurs, we'll send a notification with a JSON body to that endpoint that includes information about the event, such as its type and any data related to it.
+
+### When to use webhook
+
+All forms of payment are supported by webhooks, however they are particularly helpful for methods and situations that are beyond of your application's control, like:
+    * Recurring payment
+    * A pending payment becomes successful
+    * Mobile payment with checkout
+
+Given that none of these actions are controlled by your application and are all reactive, you won't know when they are finished unless we let you know or you check back later. 
+We can tell you when these payments are finished by setting up a webhook. You can then: inside your webhook endpoint  
+    1. After a successful subscription payment, update a customer's membership information in your database.
+    2. When a subscription payment fails, send a consumer an email.
+    3. When a payment status is changed from pending to successful, update your order data.
+
+### Enabling Webhook
+
+Here's how to set up a webhook on your Fountainpay account:
+
+    * Log in to your account and click on Services
+    * Click on the default test service then paste your Webhook URL
+    * Afterwards you save and activate it. 
+
+
+
+
+
+
